@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-9.html</title>
+</head>
+<body>
+    
+    <h1>1박 2일 가족여행 코스</h1>
+    
+    <!-- 
+        ul 태그로 감싼 li 태그는 순서없는 목록으로 불릿(까만 동그라미) 
+        
+        ol 태그로 감싼 li 태그는 순서있는 목록 
+        > 기본은 숫자 1부터 or 영문 a부터 시작되게 변경도 가능
+        > <ol type="시작할 숫자 혹은 영문"></ol> , 생략시 숫자 1부터 시작함
+        > <ol type="..." start="숫자"> </ol> 입력시 `숫자`번째 내용부터 시작
+    -->
+    
+
+    <ul>
+        <!-- ol type 생략되어있을경우 숫자 1부터 시작 -->
+        <li>1일차</li>
+        <ol>
+            <li>해녀박물관</li>
+            <li>낚시체험</li>
+        </ol>
+
+        
+        <!-- ol type 'a' 의 경우  a부터 시작 -->
+        <li>2일차</li>
+        <ol type="a">
+            <li>용눈이오름</li>
+            <li>만장굴</li>
+            <li>카약체험</li>
+        </ol>
+
+
+        <!-- ol type a 인데,  start가 3이면  c부터 시작 -->
+        <li>3일차</li>
+        <ol type="a" start="3">
+            <li>용눈이오름</li>
+            <li>만장굴</li>
+            <li>카약체험</li>
+        </ol>
+
+
+        <!-- ol type가 영문 `대문자` I일경우 로마숫자를 `대문자`로 나타냄-->
+        <li>4일차</li>
+        <ol type="I" start="3">
+            <li>용눈이오름</li>
+            <li>만장굴</li>
+            <li>카약체험</li>
+        </ol>
+
+
+        <!-- ol type가 영문 `소문자` i일경우 로마숫자를 `소문자`로 나타냄-->
+        <li>5일차</li>
+        <ol type="i" start="3">
+            <li>용눈이오름</li>
+            <li>만장굴</li>
+            <li>카약체험</li>
+        </ol>
+
+
+    </ul>
+
+    
+
+
+</body>
+</html>
