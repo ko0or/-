@@ -10,9 +10,9 @@ public class BreakExample {
         Scanner scanner = new Scanner(System.in);
         System.out.println("exit를 입력하면 종료합니다.");
         
-        while (scanner.hasNext()) {
+        while (true) {
+            System.out.print(">> ");
             String text = scanner.nextLine();
-            System.out.println(">> " + text);
             
             if (text.equals("exit")) break;
         }
