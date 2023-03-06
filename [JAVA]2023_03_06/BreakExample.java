@@ -8,7 +8,7 @@ public class BreakExample {
         // 내가 작성한 코드
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("exit를 입력하면 종료합니다.");
+        System.out.println("exit를 입력하면 종료합니다.");
         
         while (scanner.hasNext()) {
             String text = scanner.nextLine();
