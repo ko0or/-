@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 체크박스 -->       
+    <h4>텍스트 눌러도 같이 체크되지 않는다</h1>
+    <input type="checkbox" name="grm">문법<br>
+    <input type="checkbox" name="grm">작문<br>
+    <input type="checkbox" name="grm">독해<br>
+
+    <h4>텍스트 누르면 같이 체크된다 (label이 감싸고있기때문)</h1>
+    <label>
+        <input type="checkbox" name="grm">문법<br>
+    </label>
+    <label>
+        <input type="checkbox" name="grm">작문<br>
+    </label>
+    <label>
+        <input type="checkbox" name="grm">독해<br>
+    </label>
+
+
+    <hr>
+    <!-- 라디오 버튼 -->
+
+
+    <h4>1개만 선택가능 (라디오)</h4>
+    <input type="radio" name="subject">영어회화<br>
+    <input type="radio" name="subject">중국어회화<br>
+    <input type="radio" name="subject">일본어회화<br>
+
+
+    <h4>텍스트 누르면 같이 체크되게하기 </h4>
+    <label>
+        <input type="radio" name="subject">영어회화<br>
+    </label>
+    <label>
+        <input type="radio" name="subject">중국어회화<br>
+    </label>
+    <label>
+        <input type="radio" name="subject">일본어회화<br>
+    </label>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        #favorites 원래 요소 id를 찾는거지만
+        다만, usemap 에서 사용되었다면 map name을 찾는다
+
+        고로 #favorites 는
+        map name 속성 값이 favorites 인것을 찾는다
+
+    -->
+
+
+    <img src="./imgs/kids.jpg" usemap="#favorites">
+    <map name="favorites">
+        <area shape="rect" coords="54, 38, 145, 58" href="https://section.cafe.naver.com/ca-fe/">
+        <area shape="rect" coords="255, 43, 361, 65" href="http://www.facebook.com/">
+    </map>
+
+</body>
+</html>

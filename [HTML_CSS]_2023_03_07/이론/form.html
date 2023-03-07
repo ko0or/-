@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function show() {
+        var getElement = document.getElementById("itemSelect");
+        var showElement = (getElement.options[getElement.selectedIndex].value);
+        alert(showElement);
+    }
+</script>
+
+<body>
+    
+    <form method="get">
+        <label>입력공간 1 <input type="text"></label>
+        <br>
+
+        <label >입력공간 2 <input type="text"></label>
+        <br>
+
+        <select id="itemSelect">
+            <option value="item01">1번째</option>
+            <option value="item02">2번째</option>
+            <option value="item03">3번째</option>
+            <option value="item04" selected>n번째</option>
+        </select>
+        <br><br>
+
+        <button type="submit">전송</button>
+        <button type="reset">취소</button>
+        <button onclick="show();">보여줘</button>
+    </form>
+
+
+</body>
+</html>
