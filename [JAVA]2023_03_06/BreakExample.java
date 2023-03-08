@@ -8,6 +8,7 @@ public class BreakExample {
         // 내가 작성한 코드
 
         Scanner scanner = new Scanner(System.in);
+        /*
         System.out.println("exit를 입력하면 종료합니다.");
         
         while (true) {
@@ -18,7 +19,21 @@ public class BreakExample {
         }
 
         System.out.println("종료합니다...");
-        scanner.close();
+        */
+        
+        
+        // 강사님 ver
+        
+        System.out.println("exit를 입력하면 종료합니다.");
+        
+        while(true) {
+            System.out.print(">> ");    
+            String text = scanner.next();
+            if (text.equals("exit")) break;
 
+        }
+        
+        System.out.println("종료합니다...");
+        scanner.close();
     }
 }
