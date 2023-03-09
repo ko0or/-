@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+        <legend>등록 정보</legend>
+
+            <!-- type="number" : 스핀으로 숫자 증감하거나 숫자만 입력 -->
+            참여인원<small>(최대10명)</small>
+            <input type="number" min="0" max="10"><br>
+
+            <!-- value="3" : 초기값 -->
+            지원물품<small>(1인당 5개)</small>
+            <input type="number" value="3" min="0" max="50" step="5"><br>
+
+            <!-- type="range" : 범위 형태로 움직임 -->
+            희망단계<small>(하, 중, 상)</small>
+            <input type="range" value="2" min="1" max="3"><br>
+
+            <!-- 
+                type="color" : 색상 선택 (기본색은 검정) 
+                RGB -> Red Green Blue 3원색
+                value="#00ff00" -> 16진수가 2개씩 쌍으로 6개(RGB) 00~ ff
+                                                                        -->
+            <input type="color" value="#00ff00">
+
+
+
+
+        </fieldset>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 이미지 맵 이용하기 -->
+    <img src="imgs/fantasy.jpg" usemap="#imgLink">
+
+    <map name="imgLink">
+
+        <!-- 사각형, 배를 클릭했을때 -->
+        <area shape="rect" 
+        coords="140,140, 212, 191" 
+        href="https://www.microsoft.com/ko-kr" 
+        target="_blank"
+        alt="배"
+        >
+        
+        <!-- 원형, 열기구를 클릭했을때 -->
+        <area shape="circle" 
+        coords="97, 39, 23" 
+        href="https://www.google.com/" 
+        target="_blank"
+        alt="열기구">
+    </map>
+
+
+    
+</body>
+</html>

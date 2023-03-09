@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <h3>검사시간을 선택하세요(오늘)</h3>
+        <!-- type="time" : 오전/오후 몇시 몇분인지만 표시 -->
+        시작시간 <input type="time" value="09:00"> <br>
+        종료시간 <input type="time" value="18:00">
+        
+        <!-- type="datetime-local" : 날짜 추가되어서 표시 (연,월,일) -->
+        <h3>검사시간을 선택하세요(다른날짜)</h3>
+        시작시간 <input type="datetime-local" value="2016-03-02 09:00"> <br>
+        종료시간 <input type="datetime-local" value="2016-03-02T18:00">
+    </form>
+    
+</body>
+</html>
