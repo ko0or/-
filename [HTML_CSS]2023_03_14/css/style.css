@@ -1,0 +1,9 @@
+h2 {
+    color: blue;
+}
+p {
+    /* 글자크기에서 em은 대문자 M 기준이 1 */
+    font-size: 0.9em; /* 글자크기 */
+    line-height: 2.0; /* 위아래 줄 간격*/
+
+}

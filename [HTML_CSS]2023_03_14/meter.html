@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li><!-- 전체 1 기준으로,   0.8만큼 차지 -->
+            점유율 0.8
+            <meter value="0.8"></meter>
+        </li>
+
+        <li><!-- 0~  100 기준으로,   64% -->
+            사용량 64%
+            <meter min="0" max="100" value="64"></meter>
+        </li>
+
+        <li>
+            <!-- 
+                low 값보다 내려갈경우 색깔이 변경된다 : 노란색 
+                high 값보다 올라갈경우 색깔이 변경된다 : 노란색 
+            -->
+            트래픽 초과
+            <meter min="1024" max="10240" low="2048" high="8192" value="9000"></meter>
+        </li>
+
+
+    </ul>
+    
+</body>
+</html>

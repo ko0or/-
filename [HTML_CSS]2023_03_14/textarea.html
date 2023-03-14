@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+
+        <!-- 필드 : 로그인-->
+        <fieldset>
+            <legend>로그인</legend>
+            아이디<input type="text" size="10" autofocus>
+            비밀번호<input type="password" size="10">
+            <input type="submit" value="로그인">
+        </fieldset>
+
+
+        <!-- 필드 : 가입하기-->
+        <fieldset>
+            <legend>가입하기</legend>
+            <li>
+                아이디<em>*</em>
+                <input type="text" size="20" required>
+            </li>
+
+            <li>
+                비밀번호<em>*</em>
+                <input type="password" size="20" required>
+            </li>
+
+            <li>
+                비밀번호 확인<em>*</em>
+                <input type="password" size="20" required>
+            </li>
+
+            <li>
+                이름<em>*</em>
+                <input type="text" size="20" required>
+            </li>
+
+            <li>
+                메일 주소<em>*</em>
+                <input type="email" size="20" required>
+            </li>
+
+            <li>
+                전화번호<em>*</em>
+                <input type="tel" size="20">
+            </li>
+        </fieldset>
+
+
+        <!-- 필드 : 이지스퍼블리싱-->
+        <fieldset>
+            <legend>이지스퍼블리싱</legend>
+
+            <!-- 
+                <textarea> 태그는  텍스트 영역으로 넓 ~~게 표시할 수 있음
+                textarea 태그의 cols 속성은     가로길이 
+                                            rows 속성은    세로길이
+            -->
+
+            <textarea cols="60" rows="5">
+                열심히 사는 사람들의 손을 잡아주는 곳 - 이지스퍼블리싱
+                열심히 사는 사람들의 손을 잡아주는 곳 - 이지스퍼블리싱
+                열심히 사는 사람들의 손을 잡아주는 곳 - 이지스퍼블리싱
+                열심히 사는 사람들의 손을 잡아주는 곳 - 이지스퍼블리싱
+                열심히 사는 사람들의 손을 잡아주는 곳 - 이지스퍼블리싱
+            </textarea>
+        </fieldset>
+
+
+        <fieldset>
+            <input type="submit" value="가입하기">
+            <input type="reset" value="다시쓰기">
+        </fieldset>
+
+    </form>    
+</body>
+</html>

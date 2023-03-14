@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 내부 스타일 -->
+    <style>
+        * {
+            /* 전체여백(상하좌우)이 20px씩 적용된다 */
+            margin: 20px;
+        }
+
+        #container {
+            /* 
+                container 라는 id를 가진 요소의 너비 ,
+                그리고 테두리 두께가 1px 인 dotted(점선)으로 꾸며준다
+                마지막으로 테두리 안쪽으로 여백을 15px 넣어준다.
+            */
+            width: 1000px;
+            padding: 15px;
+            border: 1px dotted grey;
+        }
+
+        p {
+            font-size: 0.9em;
+            line-height: 2.0;
+        }
+
+        /* 클래스 선택자 :  콤마를 찍고,  클래스명을 작성 */
+        .bluetext {
+            color: blue;
+        }
+
+        /*  h2 태그이면서 .accent 인 요소  */
+        h2.accent {
+            background-color: #222;
+            color: #fff;
+            padding: 5px;
+        } 
+
+        .browntext {
+            color: brown;
+        }
+
+        .boldtext {
+            font-weight: bold;
+        }
+        
+        /* 그룹 선택자 */
+        h3, h4 {
+            color: yellow;
+            background-color: #222;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+        <h1>회사 소개</h1>
+        <h2 class="accent">사람을 구체적으로 도와주는 책</h2>
+        <p>이지스퍼블리싱의 책에는 <span class="browntext boldtext">사람들에게 구체적으로 도움이 되는 책을</span> 만든다는 출판 가치가 담겨 있습니다.</p>
+        <p>이지스퍼블리싱의 책에는 사람들에게 구체적으로 도움이 되는 책을 만든다는 출판 가치가 담겨 있습니다.</p>
+        
+        <h2 class="bluetext">이지스퍼블리싱의 미션</h2>
+        <p>이지스퍼블리싱의 책에는 사람들에게 구체적으로 <span class="bluetext">도움</span>이 되는 책을 만든다는 출판 가치가 담겨 있습니다.</p>
+        <p>이지스퍼블리싱의 책에는 사람들에게 구체적으로 도움이 되는 책을 만든다는 출판 가치가 담겨 있습니다.</p>
+        
+        <h3>정보의 지름길을 만든다.</h3>
+        <h4>도움이 되는 책을 만든다.</h4>
+    </div>
+    
+</body>
+</html>
