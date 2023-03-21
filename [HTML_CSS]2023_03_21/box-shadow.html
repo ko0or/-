@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        div {
+            width: 200px;
+            height: 100px;
+            margin: 15px;
+            display: inline-block;
+            border: 2px solid black;
+            background-color: #ffd800;
+        }
+
+    .box1 {
+        /* 적용순서 : <가로>  <세로>  <흐림>  <번짐>  <그림자색상> */
+        box-shadow: 12px -12px 12px 0px black;
+    }
+
+    .box2 {
+        /* 적용순서 : <가로>  <세로>  <흐림>  <번짐>  <그림자색상> */
+        box-shadow: -12px 12px 15px 10px black;
+    }
+    
+
+</style>
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    
+</body>
+</html>

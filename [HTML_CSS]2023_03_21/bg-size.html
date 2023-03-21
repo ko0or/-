@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            border: 2px double black;
+            width: 500px;
+            height: 500px;
+            margin-bottom: 20px;
+        }
+
+        .bg1 {
+            /* background-size 기본값 : auto */
+            background: url(./imgs/bg4.jpg);      
+            background-size: auto;   
+        }
+
+        .bg2 {
+            /* 
+                    기본은 이미지 반복이지만,
+                    * background: url() 뒤에 ` no-repeat ` 를 붙이게되면 반복 X 
+              */
+            background: url(./imgs/bg4.jpg) no-repeat;
+            background-size: 200px 150px; 
+
+        }
+
+
+        .bg3 {
+            background: url(./imgs/bg4.jpg) no-repeat;
+            background-size: 60% 40%;
+        }
+
+        .bg4 {
+            /* 원본 이미지가 가로가 길어서, 아래에 여백이 생김 */
+            background: url(./imgs/bg4.jpg) no-repeat;
+            background-size: contain;
+        }
+
+        .bg5 {
+            background: url(./imgs/bg4.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .bg6 {
+            background: url(./imgs/bg4.jpg) no-repeat;
+            background-size: 100% 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+    <div class="bg4"></div>
+    <div class="bg5"></div>
+    <div class="bg6"></div>
+    
+</body>
+</html>

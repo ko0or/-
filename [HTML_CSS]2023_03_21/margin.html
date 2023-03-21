@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 100px;
+        background: #0094ff;
+    }
+
+    .box1 {
+        /* 마진적용방향 : 위 오른쪽 아래 왼족 ( 시계방향 )*/
+        margin: 30px 50px 30px 50px;
+    }
+    
+    .box2 {
+        /* 마진적용방향 : 위 오른쪽 아래 왼족 ( 시계방향 )*/        
+        /* margin: 30px 50px 30px 50px; */
+
+        /* 위아래는 마진이 중첩되서 30px만 적용 (단, 양옆일경우는 중첩된다)*/
+        margin: 30px 50px;
+    }
+
+    .box3 {
+        /* margin: 50px 50px 50px 50px; */
+
+        /* 아래위 중첩되어서, 큰쪽 기준으로 적용 */
+        margin: 50px;
+    }
+
+    .box4 {
+        /* 마진적용방향 : 위 오른쪽 아래 왼족 ( 시계방향 )*/        
+        /* 위아래 마진 폭이 30보다 큰 50으로  적용된다 */
+        /* margin: 30px 5px 10px 5px; */
+        margin: 30px 5px 10px;
+    }
+
+
+</style>
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    
+</body>
+</html>
