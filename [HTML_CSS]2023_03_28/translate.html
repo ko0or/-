@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .origin {
+            border: 1px solid black;
+            margin: 40px;
+        }        
+
+        .moveX:hover {
+            /* 오른쪽으로 이동 ( 마이너스일경우 왼쪽으로 ) */
+            transform: translateX(50px);
+        }
+
+        .moveY:hover {
+            /* 아래로로 이동 ( 마이너스일경우 위쪽으로 ) */
+            transform: translateY(50px);
+        }
+
+        .moveXY:hover {
+            /* X 와 Y 를 한번에 같이 ! */
+            transform: translate(50px, 50px)
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="origin">
+        <div class="moveX">
+            <img src="./imgs/bus.jpg">
+        </div>
+    </div>
+
+    <div class="origin">
+        <div class="moveY">
+            <img src="./imgs/bus.jpg">
+        </div>
+    </div>
+
+    <div class="origin">
+        <div class="moveXY">
+            <img src="./imgs/bus.jpg">
+        </div>
+    </div>
+    
+</body>
+</html>

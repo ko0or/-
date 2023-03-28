@@ -1,0 +1,62 @@
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    position: relative;
+
+    height: 280px;
+    background: url(../imgs/bg.png) no-repeat;    
+}
+header h1 {
+    position: absolute;
+    right: 20px;
+    bottom: 70px;
+
+    font-size: 3em;
+    color: #ffc;
+}
+header h2 {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+
+    font-style: 2em;
+    color: #ff0;
+}
+
+.navi {
+    width: 960px;
+    height: 150px;
+    margin-top: -15px;
+    background: #271717;
+}
+.navi ul { list-style-type: none;  }
+.navi a { 
+    text-decoration: none; 
+    color: white;  
+    padding: 10px 5px 5px 35px;
+    display: block;    
+}
+.navi a:hover {
+    color: #fc0;
+}
+
+
+.content {
+    /* 왼쪽으로 배치되면서,  밑에 있는 부분이 오른쪽으로 올라옴 */
+    float: left;
+    width: 720px;
+    padding-left: 10px;
+}
+
+footer {
+    /* float:left 속성을 clear 시킴 */
+    clear: left; 
+    background: #030;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    margin: 0;
+}

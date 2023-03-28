@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul { list-style: none;}
+    li {margin: 10px;}
+    li a {
+        font-style: 14px;
+        color: blue;
+        text-decoration: none;
+    }
+
+    a[title |= "us"] {
+        background: url(./imgs/us.png) no-repeat left;
+        padding: 5px 25px;
+    }
+
+    a[title |= "japanese"] {
+        background: url(./imgs/jp.png) no-repeat left;
+        padding: 5px 25px;
+    }
+</style>
+<body>
+
+    <ul>
+        <li>외국어 서비스: </li>
+        <!-- title : 마우스 올렸을때 제목표시 -->
+        <li><a href="#" title="us">영어</a></li>
+        <li><a href="#" title="us-english">영어</a></li>
+        <li><a href="#" title="japanese">일본어</a></li>
+    </ul>
+    
+</body>
+</html>
