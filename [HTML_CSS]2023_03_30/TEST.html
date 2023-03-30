@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 인라인 스타일 --> <style>
+
+        /* 모두 적용 */
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .container, .wrapper {
+            border: 1px solid #000;
+            padding: 1px;
+            margin: 1px;
+        }
+
+        ul { 
+            padding: 0px; 
+            list-style-type: none; 
+            margin-left: 15px; 
+        }
+        
+
+        /* 헤더에서만 적용 */
+        header ul li { 
+            display: inline-block; 
+        }
+
+        header ul li:not(:last-child) {
+            margin-right: 15px;
+            padding-right: 20px;
+            border-right: 2px solid black;
+        }
+
+
+        /* 섹션 - 아티클에서만 적용 */
+        article:nth-child(1) {
+            width: 70px;
+            height: 300px;
+            float: left;
+            text-align: left;
+        }
+
+        .firstArticleWrapper {
+            position: relative;
+            top: 80px;
+        }
+
+        article:nth-child(2) {
+            width: 878px;
+            height: 300px;
+            float: right;
+        }
+
+
+        /* 푸터부분에만 적용 */
+        footer {
+            clear: both;
+        }
+
+        footer p {
+            margin-left: 10px;
+        }
+
+        /* 가운데 정렬용 */
+        .container { margin:  0 auto; }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <!-- 헤더 -->
+        <header class="wrapper">
+            <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">게시판</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">QnA</a></li>
+            </ul>
+        </header>
+
+        <!-- 섹션 -->
+        <section>
+            <!-- 첫번째 아티클 -->
+            <article class="wrapper">
+
+                <div class="firstArticleWrapper">
+                    <ul>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">JSP</a></li>
+                        <li><a href="#">Oracle</a></li>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="wrapper"> <!-- 두번재 아티클 -->   </article>
+        </section>
+
+        <!-- 푸터 -->
+        <footer class="wrapper">
+            <p>Since 2021</p>
+        </footer>
+
+    <!-- 컨테이너 끝 ! --> </div>
+
+</body>
+</html>
