@@ -9,7 +9,7 @@
 <body>
 
 
-	<form action="registerOk.jsp" method="post">
+	<form action="loginOk.jsp" method="post">
 	
 		<table border="1">
 			<tr>

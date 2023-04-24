@@ -30,7 +30,7 @@ public class MemberDBBean {
 	}
 	
 	
-	
+// ============================================================== >>>
 	
 //	3 ) 전달받은 인자로 member를 memberT 텓이름에 삽입하는 메소드
 	public int insertMember(memberBean member) {
@@ -110,4 +110,95 @@ public class MemberDBBean {
 		return re;
 	}
 	
+	
+	
+// ============================================================== >>>
+	
+//	5 ) 사용자 ID, PW 검증하는 메소드 [ 초기값 -1, 비밀번호 불일치시 0, 비밀번호 일치시 1 ]
+	public int userCheck(String id, String pwd) {
+		
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT MEM_PWD FROM memberT WHERE MEM_UID = ?";
+		int re = -1; // 초기값 -1, 비밀번호 불일치시 0, 비밀번호 일치시 1
+		
+		try {
+			
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString( 1 , id );
+			rs = pstmt.executeQuery();
+			
+			if ( rs.next() ) {
+				
+				/*   ===== USER ID를 통해서 갖고온 PW가 일치하는지  ===== */
+				if ( rs.getString("MEM_PWD").equals(  pwd  ) == true ) {
+				
+					re = 1;
+				
+				/*   ===== ID는 맞지만, PW가 틀렸을때  ===== */
+				} else {
+					
+					re = 0;
+					
+				}
+			
+			
+/*   ===== [비가입자] ID에 해당하는 정보가 없을때  ===== */
+			} else {
+				re = -1;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return re;
+	}
+	
+	
+//	6) 아이디가 일치하는 맴버의 정보를 얻어오는 메소드
+	public memberBean getMember(String id) {
+		
+		memberBean member = null;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT "
+				+ "MEM_UID, MEM_PWD, MEM_NAME, MEM_EMAIL, MEM_ADDRESS "
+				+ "FROM memberT WHERE MEM_UID = ?";
+		
+		try {
+			
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString( 1 , id );
+			rs = pstmt.executeQuery();
+			
+			if ( rs.next() ) {
+				
+				member = new memberBean();
+				member.setMEM_UID( rs.getString("MEM_UID") );
+				member.setMEM_PWD( rs.getString("MEM_PWD") );
+				member.setMEM_NAME( rs.getString("MEM_NAME") );
+				member.setMEM_EMAIL( rs.getString("MEM_EMAIL") );
+				member.setMEM_ADDRESS( rs.getString("MEM_ADDRESS") );
+
+			}
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		
+		
+		
+		return member;
+	}
 }
