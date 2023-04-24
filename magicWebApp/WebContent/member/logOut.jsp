@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <%
 
-
-	session.removeAttribute("member");
+	session.invalidate();
 	response.sendRedirect("login.jsp");
 
 %>

@@ -5,7 +5,6 @@
 
 
 <%
-
 	MemberDBBean manager = MemberDBBean.getInstance();
 
 	String getID = request.getParameter("id");
@@ -19,7 +18,8 @@
 <script>
 	alert("존재하지 않는 회원");
 	history.back();
-</script> <%		
+</script> 
+<%		
 	}
 	else {
 		
