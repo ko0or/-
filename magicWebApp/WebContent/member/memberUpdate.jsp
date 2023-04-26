@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<form id="myForm" action="" method="post" >
+<form id="myForm" action="memberUpdateOk.jsp" method="post" >
 	<table border="1">
 		<tr>
 			<td colspan="3" style="text-align: center; padding: 10px;">
@@ -36,6 +36,7 @@
 		<tr>
 			<td>User ID</td>
 			<td colspan="2"><%= member.getMEM_UID()  %></td>
+			
 		</tr>
 		<tr>
 			<td>암호</td>

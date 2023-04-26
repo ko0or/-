@@ -47,6 +47,14 @@ public class memberBean {
 	public void setMEM_ADDRESS(String mEM_ADDRESS) {
 		MEM_ADDRESS = mEM_ADDRESS;
 	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "memberBean [MEM_UID=" + MEM_UID + ", MEM_PWD=" + MEM_PWD + ", MEM_NAME=" + MEM_NAME + ", MEM_EMAIL="
+				+ MEM_EMAIL + ", MEM_ADDRESS=" + MEM_ADDRESS + "]";
+	}
 
 	
 	

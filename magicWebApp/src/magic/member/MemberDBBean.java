@@ -37,7 +37,7 @@ public class MemberDBBean {
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO memberT VALUES( ? , ? , ? , ? , ? )";
+		String sql = "INSERT INTO boardT VALUES( ? , ? , ? , ? , ? )";
 		int re = -1; // 초기값 -1, insert 정상적으로 실행되면 1
 		
 		try {
@@ -201,4 +201,48 @@ public class MemberDBBean {
 		
 		return member;
 	}
+	
+	
+	
+	// ============================================================== >>>
+	
+	/*   ===== [업데이트, 갱신] memberUpdate.jsp 에서 요청한 업데이트 요청 처리  ===== */
+	public int updateMember(memberBean member) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		StringBuffer sql = new StringBuffer();
+		sql.append("UPDATE memberT ")
+		     .append("SET ")
+		     .append("MEM_PWD=?,MEM_EMAIL=?,MEM_ADDRESS=? ")
+		     .append("WHERE MEM_UID=?");
+		int re = -1; // 초기값 -1, 변경된 행 갯수 1
+
+		try {
+			
+//			dbcp 기법의 연결객체
+			conn = getConnection();
+			
+//			쿼리 날림
+			pstmt = conn.prepareStatement( sql.toString() );
+			pstmt.setString( 1 , member.getMEM_PWD() );
+			pstmt.setString( 2 , member.getMEM_EMAIL() );
+			pstmt.setString( 3 , member.getMEM_ADDRESS() );
+			pstmt.setString( 4 , member.getMEM_UID() );
+			re = pstmt.executeUpdate();
+		
+			pstmt.close();
+			conn.close();
+			
+//		실패시 예외처리
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("변경 실패");
+		}
+		
+		
+		return re;
+	}
+	
+
 }
