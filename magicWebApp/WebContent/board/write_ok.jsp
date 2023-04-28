@@ -11,7 +11,13 @@
 
 <%
 
-	BoardDBBean manager = BoardDBBean.getInstance();
-	manager.insertBoard(board);
+BoardDBBean manager = BoardDBBean.getInstance();
+
+	//글 쓰기 성공시 list.jsp 로 이동,   실패시 write.jsp로 이동
+	if ( manager.insertBoard(board) == 1 ) {	
+		response.sendRedirect("list.jsp?page=1"); 	
+	
+		} else { response.sendRedirect("write.jsp");
+	}
 
 %>

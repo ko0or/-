@@ -11,7 +11,7 @@
 <center>
 	<h1>글 올 리 기</h1>
 	
-	<form id="myForm" action="write_ok.jsp" method="post">
+	<form action="write_ok.jsp" method="post" id="myForm">
 
 		<table style="max-width: 700px">
 			<tr>
@@ -27,14 +27,15 @@
 			</tr>
 			<tr>
 				<td colspan="4">
-					<textarea name="b_content" cols="65" rows="10"  maxlength="3000">
-					</textarea>
+					<textarea name="b_content" cols="65" rows="10"  maxlength="3000" style="resize: none;"></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="4" style="text-align: center;">
 					<input onclick="check_ok()" type="button" value="글쓰기">
-				 	<input type="reset" value="다시작성"></td>
+				 	<input type="reset" value="다시작성">
+				 	<input onclick="location.href='list.jsp?page=1'" type="button" value="글목록">
+				 </td>
 			</tr>
 		</table>
 	</form>

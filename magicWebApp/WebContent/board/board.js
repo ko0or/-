@@ -12,3 +12,13 @@ function check_ok() {
 		document.getElementById("myForm").submit();
 	}
 }
+
+function boardEdit() {
+	alert("hello");
+    if ( getValue("b_title").length == 0 ) { alert("제목을 작성해주세요"); }
+	else if ( getValue("b_content").length == 0 ) { alert("내용을 작성해주세요"); }
+
+    else {
+		document.querySelector("form").submit();
+	}	
+}
