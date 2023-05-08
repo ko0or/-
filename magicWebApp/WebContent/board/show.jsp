@@ -7,8 +7,8 @@
 	int boardID = Integer.parseInt( request.getParameter("PK") );
 	int pageNumber = Integer.parseInt( request.getParameter("page") );
 	
-	BoardDBBean manager = BoardDBBean.getInstance();
-	BoardBean board = manager.getBoard( boardID );
+	BoardDBBean manager = new BoardDBBean();
+	BoardBean board = manager.getBoard( boardID, true );
 
 %>
 
@@ -65,7 +65,9 @@
 			
 			<tr>
 				<td width="100px;">글번호</td>
-				<td colspan="3"><%=board.getB_id()%></td>
+				<td><%=board.getB_id()%></td>
+				<td>조회수</td>
+				<td><%=board.getB_hit() %></td>
 			</tr>
 			
 			<tr>
@@ -83,7 +85,7 @@
 			
 			<tr>
 				<td style="vertical-align: top;">글내용</td>
-				<td colspan="3" style="white-space: pre"><%=board.getB_content() %></td>
+				<td colspan="3" style="white-space: pre-wrap"><%=board.getB_content() %></td>
 			</tr>
 			
 			<tr>
@@ -91,8 +93,9 @@
 				
 					<div class="btn-group">
 						<a href="list.jsp?page=<%=pageNumber%>">뒤로가기</a>
+						<a href="write.jsp?page=<%=pageNumber%>&PK=<%=boardID%>">답글달기</a>
 						<a href="edit.jsp?page=<%=pageNumber%>&PK=<%=boardID%>">수정하기</a>
-						<a href="#">삭제하기</a>
+						<a href="delete.jsp?page=<%=pageNumber%>&PK=<%=boardID%>">삭제하기</a>
 					</div>
 				</td>
 			</tr>

@@ -7,6 +7,7 @@ function check_ok() {
     else if ( getValue("b_email").length == 0 ) { alert("이메일을 입력해주세요"); }
     else if ( getValue("b_title").length == 0 ) { alert("제목을 작성해주세요"); }
 	else if ( getValue("b_content").length == 0 ) { alert("내용을 작성해주세요"); }
+	else if ( getValue("b_pwd").length == 0 ) { alert("비밀번호를 작성해주세요"); }
 
     else {
 		document.getElementById("myForm").submit();
@@ -14,7 +15,6 @@ function check_ok() {
 }
 
 function boardEdit() {
-	alert("hello");
     if ( getValue("b_title").length == 0 ) { alert("제목을 작성해주세요"); }
 	else if ( getValue("b_content").length == 0 ) { alert("내용을 작성해주세요"); }
 

@@ -11,7 +11,7 @@
 	} else {
 		
 		int pageNumber = Integer.parseInt(request.getParameter("page"));
-		BoardDBBean manager = BoardDBBean.getInstance();
+		BoardDBBean manager = new BoardDBBean();
 	
 		ArrayList<BoardBean> boards = manager.listBoard(pageNumber);
 		if ( boards.size() == 0) { response.sendRedirect("list.jsp?page=1"); }
@@ -73,6 +73,7 @@
 				<td>글제목</td>
 				<td>작성자</td>
 				<td>작성일</td>
+				<td>조회수</td>
 			</tr>
 			
 <%		for ( int index = 0; index < boards.size(); index++ ) { %>				
@@ -80,6 +81,18 @@
 				
 				<td><%=boards.get(index).getB_id() %></td>
 				<td width="500px" style="text-align: left;">
+				
+<%
+				if ( boards.get(index).getB_level() > 0 ) {
+					for ( int i=1; i < boards.get(index).getB_level(); i++) { out.print("&nbsp&nbsp&nbsp&nbsp"); }
+					%><img src="../images/AnswerLine.gif" /><%
+%>
+						
+<% 
+						
+				}
+%>				
+				
 				
 				<!-- 			게시글 이동버튼			-->
 				<a href="show.jsp?page=<%=pageNumber%>&PK=<%=boards.get(index).getB_id()%> ">
@@ -96,6 +109,9 @@
 				<td width="100px">
 				<%= new java.text.SimpleDateFormat("yyyy-MM-dd(E) a hh:mm").format(boards.get(index).getB_date()) %>
 
+				</td>
+				<td width="50px">
+				<%=boards.get(index).getB_hit() %>
 				</td>
 			</tr>
 <% 

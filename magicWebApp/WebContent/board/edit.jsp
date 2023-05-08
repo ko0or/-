@@ -7,8 +7,8 @@
 	int boardID = Integer.parseInt( request.getParameter("PK") );
 	int pageNumber = Integer.parseInt( request.getParameter("page") );
 	
-	BoardDBBean manager = BoardDBBean.getInstance();
-	BoardBean board = manager.getBoard( boardID );
+	BoardDBBean manager = new BoardDBBean();
+	BoardBean board = manager.getBoard( boardID, false );
 
 %>
 
@@ -76,7 +76,9 @@
 			
 			<tr>
 				<td width="100px;">글번호</td>
-				<td colspan="3"><%=board.getB_id()%></td>
+				<td><%=board.getB_id()%></td>
+				<td>조회수</td>
+				<td><%=board.getB_hit() %></td>
 			</tr>
 			
 			<tr>
@@ -95,6 +97,15 @@
 				<td style="vertical-align: top;">글내용</td>
 				<td colspan="3">
 					<textarea name="b_content" cols="65" rows="10"  maxlength="3000" style="resize: none;"><%=board.getB_content() %></textarea>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					암호
+				</td>
+				<td colspan="3">
+					<input type="password" name="tryPWD"  />
 				</td>
 			</tr>
 			

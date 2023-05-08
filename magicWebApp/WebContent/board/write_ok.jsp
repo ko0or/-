@@ -1,3 +1,4 @@
+<%@page import="java.net.InetAddress"%>
 <%@page import="magic.board.BoardDBBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -7,11 +8,11 @@
 <jsp:setProperty property="*" name="board"/>
 
 
-<%= board.toString() %>
+<% System.out.println(board.toString()); %>
 
 <%
 
-BoardDBBean manager = BoardDBBean.getInstance();
+	BoardDBBean manager = new BoardDBBean();
 
 	//글 쓰기 성공시 list.jsp 로 이동,   실패시 write.jsp로 이동
 	if ( manager.insertBoard(board) == 1 ) {	
