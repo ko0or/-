@@ -4,7 +4,47 @@ import java.sql.Timestamp;
 
 public class BoardBean {
 
-//	빈 프로퍼티
+//	빈 프로퍼티 1
+	public static int pageSize = 10; // 한 페이지당 10개씩 출력
+	public static int pageCount= 1; // 총 페이지 갯수
+	public static int pageNumber = 1;   // 현재 페이지번호
+	
+	/* === 리턴 : [ 이전 ] + 페이지번호 + [다음] === */
+	/* === 매개변수 limit -> 페이지네이션 출력갯수  === */
+	public static String pageButtons(int limit) {
+		String str = "";
+		int temp = (pageNumber-1) % limit; //  0 
+		int startPage = pageNumber - temp; // 1
+		
+		// [이전] 출력여부
+		if ((startPage - limit) > 0) { // 1-4 > 0 ? 거짓 , 그래서 출력되지않는다
+			str = "<a href='list.jsp?page="+(startPage-1)+"'>[이전]</a>" + "&nbsp&nbsp";
+		}
+		
+		// 페이지번호 나열하기
+		for (int i=startPage; i < (startPage+limit);  i++) { // (startPage+limit) -> 1+4 -> 5
+			
+			if ( i == pageNumber ) { // 같은 페이지일때
+				str += "[" + pageNumber  +"]" + "&nbsp&nbsp";
+				/* === 요기서 오류 나면 -> str += "[" + i  +"]" + "&nbsp&nbsp"; 로 대체하기 === */
+				
+			} else { // 다른 페이지일때
+				str += "<a href='list.jsp?page=" + i + "'>" + "[" + i + "]</a>" + "&nbsp&nbsp";
+			}			
+			if ( i >= pageCount) break;
+
+		}
+
+		// [다음] 출력여부
+		if ((startPage + limit) <= pageCount ) {
+			str += "<a href='list.jsp?page="+(startPage+limit)+"'>[다음]</a>" + "&nbsp&nbsp";
+		}
+		
+		return str;
+	}
+	
+	
+//	빈 프로퍼티 2
 	private int b_id;
 	private String b_name; 
 	private String b_email; 

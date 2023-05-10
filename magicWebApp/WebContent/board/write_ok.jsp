@@ -8,7 +8,7 @@
 <jsp:setProperty property="*" name="board"/>
 
 
-<% System.out.println(board.toString()); %>
+
 
 <%
 

@@ -28,7 +28,7 @@
 		<tr>
 			<button type="submit">글삭제</button>
 			<button type="reset">다시작성</button>
-			<button onclick="history.back()" type="button">글목록</button>
+			<button onclick="location.href='list.jsp?<%=pageNumber%>'" type="button">글목록</button>
 		</tr>
 	</form>
 </body>

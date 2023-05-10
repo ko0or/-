@@ -9,6 +9,8 @@
 	int b_step = 0;
 	int b_level = 0;
 	String b_title = null;
+	
+	int pageNumber = 1;
 
 	// show.jsp 에서 글 번호를 갖고왔다면
 	if ( request.getParameter("PK") != null ) {
@@ -23,6 +25,11 @@
 		b_title = board.getB_title();
 
 }
+	
+	if ( request.getParameter("page") != null ) {	
+		pageNumber = Integer.parseInt( request.getParameter("page") );		
+	}
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -80,7 +87,7 @@
 				<td colspan="4" style="text-align: center;">
 					<input onclick="check_ok()" type="button" value="글쓰기">
 				 	<input type="reset" value="다시작성">
-				 	<input onclick="location.href='list.jsp?page=1'" type="button" value="글목록">
+				 	<input onclick="location.href='list.jsp?page=<%=pageNumber%>'" type="button" value="글목록">
 				 </td>
 			</tr>
 		</table>

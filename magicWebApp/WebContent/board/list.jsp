@@ -10,12 +10,11 @@
 		response.sendRedirect("list.jsp?page=1");
 	} else {
 		
-		int pageNumber = Integer.parseInt(request.getParameter("page"));
+		String pageNumber = request.getParameter("page");
 		BoardDBBean manager = new BoardDBBean();
 	
-		ArrayList<BoardBean> boards = manager.listBoard(pageNumber);
+		ArrayList<BoardBean> boards = manager.listBoard( pageNumber );
 		if ( boards.size() == 0) { response.sendRedirect("list.jsp?page=1"); }
-
 		
 	
 %>
@@ -64,7 +63,7 @@
 	<div class="body-wrapper">
 	
 		<h1>게시판에 등록된 글 목록 보기</h1>
-		<a href="write.jsp">글 쓰기</a>
+		<a href="write.jsp?page=<%=pageNumber%>">글 쓰기</a>
 		
 		<table border="1">
 		
@@ -116,12 +115,13 @@
 			</tr>
 <% 
 	}
+
 } 
 %>
 		
 		</table>
+	<%= BoardBean.pageButtons(5) %>
 	</div>
-
 </body>
 </html>
 
