@@ -42,12 +42,18 @@
 <center>
 	<h1>글 올 리 기</h1>
 	
-	<form action="write_ok.jsp" method="post" id="myForm">
+	<form 
+		id="myForm"
+		action="write_ok.jsp" 
+		method="post" 
+		enctype="multipart/form-data"
+	>
 	
 	<input type="hidden" name="b_id" value="<%=b_id%>" />
 	<input type="hidden" name="b_ref" value="<%=b_ref%>" />
 	<input type="hidden" name="b_step" value="<%=b_step%>" />
 	<input type="hidden" name="b_level" value="<%=b_level%>" />
+	
 
 		<table style="max-width: 700px">
 			<tr>
@@ -74,6 +80,18 @@
 %>
 
 			</tr>
+			
+			<tr height="30">
+				<td>파 일</td>
+				<td colspan="3" width="140">
+				
+					<input type="file" name="b_fname" size="40" maxlength="100">
+				
+				</td>
+			
+			</tr>
+			
+			
 			<tr>
 				<td colspan="4">
 					<textarea name="b_content" cols="70" rows="10"  maxlength="3000" style="resize: none;"></textarea>

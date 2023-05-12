@@ -110,6 +110,10 @@ public class BoardDBBean {
 		board.setB_step( rs.getInt("B_STEP") );
 		board.setB_level( rs.getInt("B_LEVEL") );
 		
+		board.setB_fname( rs.getNString("B_FNAME") );
+		board.setB_fsize( rs.getInt("B_FSIZE") );
+		board.setB_rfname( rs.getNString("B_RFNAME") );
+		
 		return board;
 	}
 	
@@ -155,7 +159,7 @@ public class BoardDBBean {
 	        /* === (공통) 답변이든, 아니든 관계없이 무조건 실행 === */
 //	        sql = "INSERT INTO boardT VALUES((SELECT NVL(MAX(B_ID), 0) FROM boardT)+1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	        sql = "INSERT INTO boardT VALUES((SELECT NVL(MAX(B_ID), 0) FROM boardT)+1";
-	        for (int i=0; i < 11; i++) { sql += ", ? "; } sql +=")";
+	        for (int i=0; i < 14; i++) { sql += ", ? "; } sql +=")";
 	        
 	        pstmt = conn.prepareStatement(sql);
 	        pstmt.setString(1, board.getB_name());
@@ -166,9 +170,14 @@ public class BoardDBBean {
 	        pstmt.setInt(6, 0);
 	        pstmt.setString(7, board.getB_pwd());
 	        pstmt.setString(8, InetAddress.getLocalHost().getHostAddress());
+	        
 	        pstmt.setInt(9, ref);
 	        pstmt.setInt(10, step);
 	        pstmt.setInt(11, level);
+	        
+	        pstmt.setString(12, board.getB_fname());
+	        pstmt.setInt(13, board.getB_fsize());
+	        pstmt.setString(14, board.getB_rfname());
 
 	        re = pstmt.executeUpdate();
 	        returnOfResource();
@@ -211,14 +220,14 @@ public class BoardDBBean {
 				pageSet.close();
 			}
 			
-			// 페이지마다, 미리 정해둔 개수만큼 표시
+			// 페이지마다, 미리 정해둔 개수(BoardBean.pageSize)만큼 표시
 			if (dbCount % BoardBean.pageSize == 0) { 
 				BoardBean.pageCount = dbCount / BoardBean.pageSize;
 			} else { 
 				BoardBean.pageCount = dbCount / BoardBean.pageSize + 1;
 			}
 			
-            // 페이지 단위로 게시글 일련번호 부여하기
+            // 페이지 단위로 게시글 일련번호 부여하기 ( 페이지 1일땐 1부터, 2일땐 11부터, 3일땐 21부터 .. )
 			if (pageNumber != null) {
 				BoardBean.pageNumber = Integer.parseInt(pageNumber);
 				absolutePage = (BoardBean.pageNumber - 1) * BoardBean.pageSize + 1;
@@ -344,4 +353,29 @@ public class BoardDBBean {
 	
 	
 	
+	
+	
+	
+	/* ====  ... ??  ====  */
+	public BoardBean getFileName(int boardPK) {
+		BoardBean board = null;
+		
+		try {
+		
+			sql = "SELECT b_fname, b_rfname FROM boardT WHERE b_id = ? ";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt( 1 , boardPK );
+			rs = pstmt.executeQuery();
+			
+			if ( rs.next() ) {
+				board = new BoardBean();
+				board.setB_fname( rs.getString("b_fname") );
+				board.setB_rfname( rs.getString("b_rfname") );
+				return board;
+			}
+		
+		} catch (Exception e) { e.printStackTrace();
+		} finally { returnOfResource(); }
+		return null;
+	}
 }

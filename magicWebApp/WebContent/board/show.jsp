@@ -78,6 +78,36 @@
 				</td>
 			</tr>
 			
+			
+			
+			<tr><td>첨부파일</td><td colspan="3">
+			<!--  FileDownload.jsp 로 넘어갈때 boardPK 를 들고감  -->
+			<%		
+				out.print("<a href='FileDownload.jsp?fileNumber="+board.getB_id()+"'>"+board.getB_rfname()+"</a>");
+			
+			%>
+			</td></tr>
+			
+<%-- 				
+			<% if ( board.getB_fname() != null ) { %>
+			<tr>
+				<td>파일</td>
+				<td colspan="3" >
+						<img src="../images/zip.gif"> &nbsp &nbsp  
+						
+						<a 
+							
+							href="../uploadFiles/<%=board.getB_fname()%>">
+							(원본파일 : <%= board.getB_fname() %>)
+						
+						</a>
+				</td>
+			</tr>
+			<% }  %>
+--%>				
+
+	
+			
 			<tr>
 				<td>글제목</td>
 				<td colspan="3"><%=board.getB_title() %></td>
@@ -85,7 +115,7 @@
 			
 			<tr>
 				<td style="vertical-align: top;">글내용</td>
-				<td colspan="3" style="white-space: pre-wrap"><%=board.getB_content() %></td>
+				<td colspan="3" style="white-space: pre-wrap"><%= board.getB_content() %></td>
 			</tr>
 			
 			<tr>

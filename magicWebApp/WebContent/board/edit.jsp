@@ -93,6 +93,13 @@
 				<td colspan="3"><input type="text" name="b_title" value="<%=board.getB_title()%>" /></td>
 			</tr>
 			
+			<tr height="30">
+				<td>파 일</td>
+				<td colspan="3" width="140">				
+					<input type="file" name="b_fname" size="40" maxlength="100">				
+				</td>			
+			</tr>
+			
 			<tr>
 				<td style="vertical-align: top;">글내용</td>
 				<td colspan="3">
